@@ -1,5 +1,5 @@
-import {  defineStore } from 'pinia'
-import { ref, reactive, computed } from "vue"
+import { defineStore } from 'pinia'
+import { reactive, computed } from "vue"
 
 
 export const useCurrencyStore = defineStore('currency', () => {
