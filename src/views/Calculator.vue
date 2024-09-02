@@ -47,11 +47,6 @@ function convert() {
   secondCurrencyState.value = convertation(firstCurrencyState.value, firstCurrencyState.currency, secondCurrencyState.currency)
 }
 
-
-function updatePair() {
-  // update uneversal pair
-  convert()
-}
 </script>
 
 <template>
@@ -60,15 +55,15 @@ function updatePair() {
     v-model="firstCurrencyState.value"
     v-model:currency="firstCurrencyState.currency"
     :list="currenciesList"
-     @update:modelValue="updatePair"
-     @update:currency="updatePair"
+     @update:modelValue="convert"
+     @update:currency="convert"
   />
   <CurrencyInput
     v-model="secondCurrencyState.value"
     v-model:currency="secondCurrencyState.currency"
     :list="pairCurrenciesList"
-    @update:modelValue="updatePair"
-    @update:currency="updatePair"
+    @update:modelValue="convert"
+    @update:currency="convert"
   />
   <button class="btn btn-primary" @click="convert">Convert</button>
 </div>
